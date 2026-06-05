@@ -87,12 +87,12 @@ That's enough to read the data. The statistics themselves get their own primer r
 - [X] venv on Python 3.12.x; `pip install` requests, pandas, pyarrow, ipykernel
 - [X] Add `.env`, `data/`, `__pycache__/`, dbt target dirs to `.gitignore`
 - [X] Download a **small sample** from the PHH dataset — a handful of files, not the full 21M. (You scale up in Phase 7, not now.)
-- [ ] In a notebook, open **one hand** and read it with your eyes. Identify: the blinds, each player's seat and position, and the sequence of actions on each street.
-- [ ] By hand, parse that one hand into three Python dicts:
+- [X] In a notebook, open **one hand** and read it with your eyes. Identify: the blinds, each player's seat and position, and the sequence of actions on each street.
+- [X] By hand, parse that one hand into three Python dicts:
   - `hand` — id, stakes, board cards
   - `players` — one row per player: seat, position, starting stack, amount won/lost
   - `actions` — one row per action: street, player, action type, amount
-- [ ] First Git commit with the skeleton
+- [X] First Git commit with the skeleton
 
 ### Exit Criteria
 One real hand is fully structured into the three dicts, and you can point at each field in the raw file and say what it is. Skeleton committed.
