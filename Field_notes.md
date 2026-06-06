@@ -33,3 +33,5 @@ tqdm reports about 9 files per second. No unknown firing.
 
 ** Possible Bug: **
 It seems suspicious that my hands count equals my player count. (Fixed - added to learning points)
+
+Players modelled as a dict keyed by name produced one wide row per hand; correct shape is one row per player per hand (long, not wide) — wide tables break both row counts and Parquet. Need to fix at source.

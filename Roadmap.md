@@ -130,7 +130,7 @@ A `data/parquet/` folder holding several thousand hands across the three record 
 **Estimated effort:** 1 session
 
 ### Tasks
-- [ ] `pip install duckdb`
+- [X] `pip install duckdb`
 - [ ] From Python (or the DuckDB CLI), run `SELECT count(*) FROM 'data/parquet/hands/*.parquet'` — note there was **no import step**
 - [ ] Write a few aggregate queries: hands per player, hands per stake level, average pot size
 - [ ] Time a query over the largest sample you have
