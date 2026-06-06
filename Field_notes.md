@@ -31,7 +31,38 @@ tqdm reports about 9 files per second. No unknown firing.
 |players|2,273,209|108,374 KB|14,251 KB|
 |actions|4,146,645|120,491 KB|10,641 KB|
 
-** Possible Bug: **
+**Bug #0 FOUND:**
 It seems suspicious that my hands count equals my player count. (Fixed - added to learning points)
 
 Players modelled as a dict keyed by name produced one wide row per hand; correct shape is one row per player per hand (long, not wide) — wide tables break both row counts and Parquet. Need to fix at source.
+
+Doing a complete run of all of the data (21,782 files 21.6 M hands)
+
+**BUG #1 FOUND:**
+Issue found where I get a key error for 'hand'
+I need to put better error logging for these errors. Need to show the file name and the TOML index. (Done)
+Also need some defensive mesasures. (Done)
+
+**BUG #2 Found:**
+Serious memory consumption. Implementing a batch and flush methodology.
+
+Also changing the schema and putting in schema enforcement on write. Things Changed:
+* Hand_Id is now a string everywhere.
+* Added a small_blind and big_blind column to hands.
+
+tqdm is reporting between 8-10 files per second. This is likely due to disk caching.
+Full run total file count is 21,782.
+Full run completed in 1:10:35 with a FILE_BATCH_SIZE = 250
+> Total files processed: 21,782. Total hands skipped due to errors: 133.
+This is an error rate of 0.00061%
+
+|name|row count|parquet size|
+|---|---|---|---|
+|hands|389,834|4,673 KB|
+|players|2,273,209|14,251 KB|
+|actions|4,146,645|10,641 KB|
+
+Duck DB and DBT setup:
+Installed the dbt-duckdb items. Note that the profile is created in my user directory and not the projects directory.
+
+I need to build the duck DB persistant database.

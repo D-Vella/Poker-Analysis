@@ -148,10 +148,10 @@ Aggregate queries return correct results, fast, directly against the Parquet wit
 **Estimated effort:** 1–2 sessions
 
 ### Tasks
-- [ ] `pip install dbt-duckdb`; `dbt init` inside the project
+- [X] `pip install dbt-duckdb`; `dbt init` inside the project
 - [ ] Configure `profiles.yml` to point dbt at a DuckDB database file
 - [ ] Define **sources** pointing at your raw Parquet tables (hands, players, actions)
-- [ ] Build `stg_hands`, `stg_players`, `stg_actions` — light cleaning, consistent column names, correct data types
+- [ ] Build `slv_hands`, `slv_players`, `slv_actions` — light cleaning, consistent column names, correct data types
 - [ ] Run `dbt build` and confirm green
 
 ### Learning note — the four dbt ideas you're meeting here
