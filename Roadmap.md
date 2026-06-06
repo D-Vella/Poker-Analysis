@@ -108,10 +108,10 @@ This manual parse is deliberate. There's a library (`pokerkit`, from the same gr
 
 ### Tasks
 - [ ] Write `src/parser.py` that turns a raw hand into the three flat record types from Phase 1
-- [ ] Loop it over a few thousand hands
-- [ ] Write the output as three Parquet files/folders: `hands`, `players`, `actions`
-- [ ] As an experiment, also write the same data as CSV. Compare: file size on disk, and time to read back and count rows.
-- [ ] Record the comparison numbers in **Field Notes**
+- [X] Loop it over a few thousand hands
+- [X] Write the output as three Parquet files/folders: `hands`, `players`, `actions`
+- [X] As an experiment, also write the same data as CSV. Compare: file size on disk, and time to read back and count rows.
+- [X] Record the comparison numbers in **Field Notes**
 
 ### Learning note — why Parquet (the concept this phase teaches)
 A CSV stores data **row by row**: all of row 1's columns, then all of row 2's. Parquet stores it **column by column**: all the `position` values together, then all the `amount` values together. Two consequences:

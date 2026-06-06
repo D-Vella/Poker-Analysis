@@ -13,3 +13,23 @@ Call amounts not stored in PHH; deriving them needs full betting-state tracking;
 In the event of an unknown verb the parser will print what it hit.
 
 tomllib will read the whole file of PHH natively and the "[1]" becomes the index for each hand in a given file.
+
+I have written the 3 outputs for 1000 hand (one source file) into parquet and csv
+|name|row count|csv size|parquet size|
+|---|---|---|---|
+|hands|1000|51 KB|18 KB|
+|players|1000|563 KB|346 KB|
+|actions|10985|319 KB|32 KB|
+
+Doing larger test of 1 folder of data  (391 files):
+
+tqdm reports about 9 files per second. No unknown firing.
+
+|name|row count|csv size|parquet size|
+|---|---|---|---|
+|hands|389,834|19,420 KB|4,673 KB|
+|players|2,273,209|108,374 KB|14,251 KB|
+|actions|4,146,645|120,491 KB|10,641 KB|
+
+** Possible Bug: **
+It seems suspicious that my hands count equals my player count. (Fixed - added to learning points)
