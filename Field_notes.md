@@ -68,8 +68,17 @@ Installed the dbt-duckdb items. Note that the profile is created in my user dire
 I need to build the duck DB persistant database. (Done)
 
 ## Schema anlaysis for Silver layer transformations.
+
+### Observations:
 * Confirmed that the player ID is consistant across hands.
+* Check the referential integreity of the data.
+
+### Changes to make in DBT:
 * Rebuild the Hand_ID to be pure intergers for compression.
     * Deffered until after phase 6 as a benchmarking test
 * May rebuild the player ID to an int as well for the same reason.
     * Deffered until after phase 6 as a benchmarking test
+
+### Changes to make in Bronze Ingestion:
+* Map the actions to the player ID. Right now the `actions` table only has the player number like "p1". It needs the actual player_ID from the `players` table.
+* Add the datetime field to the `hand` table entry to enable time series analysis.
