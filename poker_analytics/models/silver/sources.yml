@@ -1,0 +1,14 @@
+sources:
+  - name: raw_poker
+    meta:
+       external_location: "read_parquet('{{ var(\"PARQUET_PATH\") }}/hands/*.parquet')"
+    tables:
+      - name: hands
+        meta:
+          external_location: "read_parquet('{{ var(\"PARQUET_PATH\") }}/hands/*.parquet')"
+      - name: players
+        meta:
+          external_location: "read_parquet('{{ var(\"PARQUET_PATH\") }}/players/*.parquet')"
+      - name: actions
+        meta:
+          external_location: "read_parquet('{{ var(\"PARQUET_PATH\") }}/actions/*.parquet')"

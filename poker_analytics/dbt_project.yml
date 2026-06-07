@@ -5,6 +5,10 @@
 name: 'poker_analytics'
 version: '1.0.0'
 
+vars:
+    DUCKDB_FILE: "C:\\Users\\dsvel\\Coding_Projects\\Poker-Analysis\\data\\duckdb\\poker_analysis.duckdb"
+    PARQUET_PATH: "C:\\Users\\dsvel\\Coding_Projects\\Poker-Analysis\\data\\parquet\\"
+
 # This setting configures which "profile" dbt uses for this project.
 profile: 'poker_analytics'
 

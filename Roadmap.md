@@ -132,8 +132,8 @@ A `data/parquet/` folder holding several thousand hands across the three record 
 ### Tasks
 - [X] `pip install duckdb`
 - [X] From Python (or the DuckDB CLI), run `SELECT count(*) FROM 'data/parquet/hands/*.parquet'` — note there was **no import step**
-- [ ] Write a few aggregate queries: hands per player, hands per stake level, average pot size
-- [ ] Time a query over the largest sample you have
+- [X] Write a few aggregate queries: hands per player, hands per stake level, average pot size
+- [X] Time a query over the largest sample you have
 
 ### Learning note — what's different about DuckDB
 A traditional database (Postgres, the kind trackers use) needs you to *load* data into it first, into its own storage format, with indexes. DuckDB can point straight at Parquet files on disk and query them in place — no loading, no server, no indexes to maintain. It's an **OLAP** engine (analytical: scan-and-aggregate) rather than **OLTP** (transactional: many small inserts and point lookups, which is what trackers' Postgres is tuned for, and why they struggle at analysis-scale).
@@ -149,10 +149,10 @@ Aggregate queries return correct results, fast, directly against the Parquet wit
 
 ### Tasks
 - [X] `pip install dbt-duckdb`; `dbt init` inside the project
-- [ ] Configure `profiles.yml` to point dbt at a DuckDB database file
-- [ ] Define **sources** pointing at your raw Parquet tables (hands, players, actions)
-- [ ] Build `slv_hands`, `slv_players`, `slv_actions` — light cleaning, consistent column names, correct data types
-- [ ] Run `dbt build` and confirm green
+- [X] Configure `profiles.yml` to point dbt at a DuckDB database file
+- [X] Define **sources** pointing at your raw Parquet tables (hands, players, actions)
+- [X] Build `slv_hands`, `slv_players`, `slv_actions` — light cleaning, consistent column names, correct data types
+- [X] Run `dbt build` and confirm green
 
 ### Learning note — the four dbt ideas you're meeting here
 - **Source** — a declared pointer to raw data dbt didn't create (your Parquet).

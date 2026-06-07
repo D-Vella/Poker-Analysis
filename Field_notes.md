@@ -65,4 +65,9 @@ This is an error rate of 0.00061%
 Duck DB and DBT setup:
 Installed the dbt-duckdb items. Note that the profile is created in my user directory and not the projects directory.
 
-I need to build the duck DB persistant database.
+I need to build the duck DB persistant database. (Done)
+
+## Schema anlaysis for Silver layer transformations.
+* Confirmed that the player ID is consistant across hands.
+* Rebuild the Hand_ID to be pure intergers for compression.
+* 
