@@ -96,3 +96,8 @@ I need to build the duck DB persistant database. (Done)
 #### Players:
 * Fix the dictionary of dictionaries issue. (Done)
 * Implement a sort on the `Players` table based on the hand_id and Sequence before writedown. (Done)
+
+# Working on VPIP:
+
+Reference file: "abs NLH handhq_1-OBFUSCATED.phhs"
+Reference ID: [64]
