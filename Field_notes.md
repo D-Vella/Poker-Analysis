@@ -75,10 +75,24 @@ I need to build the duck DB persistant database. (Done)
 
 ### Changes to make in DBT:
 * Rebuild the Hand_ID to be pure intergers for compression.
-    * Deffered until after phase 6 as a benchmarking test
+    * Deferred until after phase 6 as a benchmarking test
 * May rebuild the player ID to an int as well for the same reason.
-    * Deffered until after phase 6 as a benchmarking test
+    * Defferred until after phase 6 as a benchmarking test
 
 ### Changes to make in Bronze Ingestion:
-* Map the actions to the player ID. Right now the `actions` table only has the player number like "p1". It needs the actual player_ID from the `players` table.
-* Add the datetime field to the `hand` table entry to enable time series analysis.
+* Need to add / update doc strings.
+* Test the blinds assumption in the `Hands` table.
+
+#### Hands:
+* Add the date field to the `Hands` table entry to enable time series analysis. (Done)
+* Add site to the `Hands` Entry. (Done)
+* Add Sourcefile to the `Hands` entry for diagnostics (Done)
+* Implement a sort on the `Hands` table based on the date before writedown. (Done)
+
+#### Actions:
+* Map the actions to the player ID. Right now the `Actions` table only has the player number like "p1". It needs the actual player_ID from the `Players` table. (Done)
+* Implement a sort on the `Actions` table based on the hand_id and Sequence before writedown. (Done)
+
+#### Players:
+* Fix the dictionary of dictionaries issue. (Done)
+* Implement a sort on the `Players` table based on the hand_id and Sequence before writedown. (Done)
