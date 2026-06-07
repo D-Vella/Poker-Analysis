@@ -70,4 +70,6 @@ I need to build the duck DB persistant database. (Done)
 ## Schema anlaysis for Silver layer transformations.
 * Confirmed that the player ID is consistant across hands.
 * Rebuild the Hand_ID to be pure intergers for compression.
-* 
+    * Deffered until after phase 6 as a benchmarking test
+* May rebuild the player ID to an int as well for the same reason.
+    * Deffered until after phase 6 as a benchmarking test
