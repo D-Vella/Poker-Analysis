@@ -99,5 +99,4 @@ I need to build the duck DB persistant database. (Done)
 
 # Working on VPIP:
 
-Reference file: "abs NLH handhq_1-OBFUSCATED.phhs"
-Reference ID: [64]
+reference Hand Id = 59107073baace709e358e55cd6ffb110
